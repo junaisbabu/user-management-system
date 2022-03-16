@@ -1,0 +1,51 @@
+<section class="" style="padding-top: 5em;">
+  <div class="container d-flex justify-content-center col-md-12 col-lg-12 ">
+    <table class="table" id="userTable" style="width: 75rem;">
+      <thead>
+        <tr>
+          {{!-- <th scope="col">#</th> --}}
+          <th scope="col">No</th>
+          <th scope="col">Full Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Place</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {{#each users}}
+        <tr>
+          {{!-- <th scope="row">1</th> --}}
+          <td></td>
+          <td>{{this.name}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.place}}</td>
+          <td>{{this.mobile}}</td>
+          <td>{{this.status}}</td>
+          <td> 
+            <div class="">
+              <a href="/admin/edit-user/{{this._id}}" class="btn btn-primary" style="width: 100px;">Edit</a>
+              
+              
+              {{!-- <a href="/admin/block-user/{{this._id}}" class="btn btn-warning mt-1 " style="width: 80px;"
+              onclick="return confirm('Are you want to block {{this.name}}?')">block</a>
+              
+              <a href="/admin/unblock-user/{{this._id}}" class="btn btn-warning mt-1 " style="width: 80px;"
+              onclick="return confirm('Are you want to block {{this.name}}?')">Unblock</a> --}}
+              
+             
+
+              <a class="btn btn-danger"
+                onclick="delete-user('{{this._id}}')" style="color:#fff, width:80px;padding:auto;">Delete</a>
+            </div>
+          </td>
+
+        </tr>
+        {{/each}}
+
+      </tbody>
+    </table>
+  </div>
+</section>
